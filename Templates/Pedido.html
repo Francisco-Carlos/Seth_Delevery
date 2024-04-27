@@ -1,0 +1,35 @@
+{% extends 'Index.html' %}
+{% block content %}
+{% load static %}
+
+<table class="table container" style="width: 50%;">
+    <thead>
+      <tr>
+        <th scope="col">Lanche</th>
+        <th scope="col">Bebida</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Distacia</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for ped in Lista %}
+                <td>
+                    {{ped}}
+                </td>
+                
+            {% endfor %}
+        </tr>
+    </tbody>
+  </table>
+     {% if Pag == 'Nao' %}
+        <div class="container">
+            <p style="text-align: center; font-size: 35px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Fique com o cartão ou dinhiero na mao</p>
+        </div>
+    {% else %}
+        <div class="container">
+            <img style="margin-left: 250px;" src="{% static 'img/Pagamento.png' %}" alt="" srcset="">
+        </div>
+    {% endif %}
+   
+{% endblock%}
